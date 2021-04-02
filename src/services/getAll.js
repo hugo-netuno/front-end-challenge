@@ -8,3 +8,5 @@ const getAll = () => fetch(urlList)
   );
 
 export default getAll;
+
+// comentario
