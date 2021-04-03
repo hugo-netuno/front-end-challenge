@@ -1,3 +1,4 @@
+// import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 const PostCard = (post) => {
   const { _embedded, title, slug } = post.post;
@@ -7,6 +8,12 @@ const PostCard = (post) => {
   } catch (error) {
     source = 'https://static.thenounproject.com/png/3594661-200.png';
   }
+  // useEffect(() => {
+  //   getPost(slug).then((response) => {
+  //     setData(response);
+  //     setLoading(false);
+  //   });
+  // }, []);
   return (
     <div className='card-container'>
       <img src={ source } alt='' className='card-img'/>

@@ -1,17 +1,20 @@
 import React, { useContext, useEffect } from 'react';
 import ApikiBlogContext from '../context/ApikiBlogContext';
-import getAll from '../services/getAll';
+import getMore from '../services/getMore';
 import PostsList from '../components/PostsList';
 import Button from '../components/Button';
 
 const MainPage = () => {
-  const { loading, setLoading, setData } = useContext(ApikiBlogContext);
-  useEffect(() => {
-    getAll().then((response) => {
+  const { loading, setLoading, setData, data } = useContext(ApikiBlogContext);
+  // useEffect(() => {
+    // for (let index = 0; index < 16; index++) {    
+    getMore().then((response) => {
       setData(response);
-      setLoading(false);
+      console.log(data);
     });
-  }, []);
+  // }
+  setLoading(false);
+// }, []);
 
   return (
     !loading ?
